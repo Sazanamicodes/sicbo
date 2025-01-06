@@ -1,0 +1,352 @@
+.dice-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.dice-grid img {
+  max-width: 50%;
+  height: auto; /* Maintain aspect ratio */
+  width: 50px; /* Initial width; adjust as needed */
+}
+
+
+/* =============================================== */
+/* start button */
+
+.startButtons {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.startButtons button {
+  font-size: 18px;
+  padding: 24px 24px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  margin-right: 20px;
+}
+
+
+
+/* =============================================== */
+/* big small */
+
+.bigsmall {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.bigsmall button {
+  font-size: 24px;
+  padding: 24px 24px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  margin-right: 20px;
+}
+
+.bigsmall span{
+  color: black;
+  font-size: 18px;
+}
+/* =============================================== */
+/* single */
+
+.singles {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.singles button {
+  font-size: 0px;
+  padding: 24px 24px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  max-height: 100%;
+  width: auto;
+}
+
+.singles button img {
+  max-width: 50%;
+  height: auto; /* Maintain aspect ratio */
+  width: 50px; /* Initial width; adjust as needed */
+}
+
+.single-payout {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+/* =============================================== */
+/* double */
+
+.doubles {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.doubles button{
+  font-size: 0px;
+  padding: 24px 24px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  max-height: 100%;
+  width: auto;
+}
+
+.doubles button img {
+  max-width: 50%;
+  height: auto; /* Maintain aspect ratio */
+  width: 50px; /* Initial width; adjust as needed */
+}
+
+.double-payout {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+}
+/* =============================================== */
+/* triple */
+
+
+.triples button img {
+  max-width: 20%;
+  height: auto; /* Maintain aspect ratio */
+  width: 50px; /* Initial width; adjust as needed */
+}
+
+.triples button {
+  font-size: 0px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  max-height: 100%;
+  width: auto;
+  padding: 10px;
+  margin: 0px;
+  border-radius: 5px;
+}
+
+.wrap-123, 
+.wrap-456 {
+  display: flex;
+  flex-direction: column; /* Stack buttons vertically */
+  align-items: center; /* Center buttons horizontally */
+  gap: 10px; /* Space between buttons */
+  margin: auto auto;
+  background-color: red;  
+  border-radius: 5px;
+}
+
+.triples {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr 1fr; /* Left, middle, and right columns */
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  align-items: stretch; /* Stretch all sections to equal height */
+  
+}
+
+.wrap-123, 
+.wrap-456,
+.wrap-000 {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Space between buttons */
+  justify-content: space-between; /* Distribute content evenly */
+  background-color: white; /* Match the style */
+  padding: 10px;
+}
+
+.wrap-123, 
+.wrap-456 {
+  flex: 1; /* Left and right sections take equal width */
+  background-color: rgb(218, 24, 24);
+}
+
+
+.wrap-000 {
+  flex: 2; /* Middle section is twice the width */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center; /* Center align its content */
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+#t1, #t2, #t4, #t5{
+  padding-bottom: 10px;
+}
+
+
+.triple-payout p{
+  color: white;
+  font-size: 18px;
+  text-align: center;
+}
+
+.triple-payout{
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: rgb(218, 24, 24);
+}
+
+
+
+
+
+
+/* =============================================== */
+/* combination */
+
+.combination {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.combination button {
+  font-size: 0px;
+  display: flex; /* Use Flexbox */
+  flex-direction: row; /* Align items horizontally */
+  align-items: center; /* Vertically center the images */
+  justify-content: center; /* Center the images horizontally */
+  gap: 5px; /* Add spacing between the dice */
+  padding: 10px;
+  background-color: white; /* Background color for the button */
+  border: 2px solid black; /* Optional border */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  width: 100px; /* Optional: Adjust button size */
+  height: 50px; /* Optional: Adjust button size */
+}
+
+.combination button img {
+  max-width: 100%; /* Ensure the image doesn't overflow */
+  height: 100%; /* Maintain aspect ratio */
+  width: auto; /* Initial width; adjust as needed */
+}
+
+.combi-payout {
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  writing-mode: vertical-rl;
+  text-orientation: upright;
+  margin-left: -100px;
+}
+
+
+/* =============================================== */
+/* sum */
+
+.sum{
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+  
+}
+
+.sum button {
+  font-size: 24px;
+  padding: 12px 12px;
+  background-color: white; /* Blue background */
+  color: red;             /* White text */
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth hover effects */
+  text-align: center;
+  width: auto; /* Width adjusts based on content */
+  height: auto;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+.sum-payout {
+  color: black;
+  font-size: 18px;
+}
+/* =============================================== */
+/* bet */
+
+.bet {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 10px;
+  background-color: rgb(218, 24, 24);
+  padding: 10px;
+}
+
+.bet button{
+  font-size: 24px;
+  padding: 12px 12px;
+  background-color: white;
+  color: red;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+/* ALL */
+
+.wrapper {
+  transform-origin: top left; /* Scale starting from the top left */
+  width: 100%;
+  max-width: 800px; /* Optional: Constrain the maximum width */
+  margin: 0; /* Remove any automatic centering */
+  text-align: left; /* Align text and content to the left */
+}
+

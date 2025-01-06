@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>骰宝（简易版）</title>
+    <link rel="stylesheet" href="shaibao.css">
+  </header>
+  <body>
+    <h1>Sic Bo</h1>
+    
+    <p class="js-player-choice">Player Choice:</p>
+    <p class="js-result">Result:</p>
+
+<div class="wrapper">
+    <div class="dice-grid">
+      <div class="dice1">
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+      </div>
+      <div class="dice2">
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+      </div>
+      <div class="dice3">
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+      </div>
+    </div>
+
+    <div class="startButtons">
+      <button onclick="initializeAll()">New Game</button>
+      <button onclick="rollTheDices()">Roll the dices</button>
+      <button onclick="startNextRound()">Next Round</button>
+    </div>
+
+    <div class="bigsmall js-bos">
+      <button id="Big">Big <span>一赔一</span></button>
+      <button id="Small">Small <span>一赔一</span></button>
+    </div>
+
+    <div class="singles js-single">
+      <!-- <button id="single1">1</button> -->
+
+      <button id="single1">1
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+      </button>
+
+      <button id="single2">2
+        <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+      </button>
+
+      <button id="single3">3
+        <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+      </button>
+
+      <button id="single4">4
+        <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+      </button>
+
+      <button id="single5">5
+        <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+      </button>
+
+      <button id="single6">6
+        <img src="dice_Images/dice-six-faces-six.svg" alt="Button Image">
+      </button>
+
+      <p class="single-payout">一赔一</p>
+    </div>
+
+    <div class="doubles js-double">
+
+      <button id="double11">11
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+      </button>
+
+      <button id="double22">22
+        <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+      </button>
+
+      <button id="double33">33
+        <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+      </button>
+
+      <button id="double44">44
+        <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+      </button>
+
+      <button id="double55">55
+        <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+      </button>
+
+      <button id="double66">66
+        <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+        <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+      </button>
+
+      <p class="double-payout">一赔八</p>
+    </div>
+
+    <div class="wrap-triples">
+
+      <div class="triples js-triple">
+
+          <div class="wrap-123">
+            
+            <button id="triple111">111
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+            </button>
+
+            <button id="triple222">222
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+            </button>
+
+            <button id="triple333">333
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+            </button>
+          </div>
+
+          <button class="wrap-000">000
+        <div class="t1-t3">
+          <div id="t1">
+            <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+          </div>
+
+          <div id="t2">
+            <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+          </div>
+
+          <div id="t3">
+            <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+          </div>
+        </div>
+        <div class="t4-t6">
+          <div id="t4">
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+          </div>
+
+          <div id="t5">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+          </div>
+
+          <div id="t6">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+          </div>
+        </div>
+
+          </button>
+          
+          <div class="wrap-456">
+          <button id="triple444">444
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+          </button>
+
+          <button id="triple555">555
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+          </button>
+
+          <button id="triple666">666
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+          </button>
+          </div>
+      </div>
+
+      <div class="triple-payout">
+        <p class="triple-payout">一赔一百五</p>
+        <p class="triple000-payout">一赔二十四</p>
+        <p class="triple-payout">一赔一百五</p>
+      </div>
+  </div>
+
+    <div class="combination js-combi">
+
+      <div class="combi1">
+            <button id="combi12">12
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+            </button>
+
+            <button id="combi13">13
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+            </button>
+
+            <button id="combi14">14
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            </button>
+      </div>
+
+      <div class="combi2">
+            <button id="combi15">15
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi16">16
+              <img src="dice_Images/dice-six-faces-one.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi23">23
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+            </button>
+      </div>
+
+      <div class="combi3">
+            <button id="combi24">24
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+            </button>
+
+            <button id="combi25">25
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi26">26
+              <img src="dice_Images/dice-six-faces-two.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+      </div>
+
+      <div class="combi4">
+            <button id="combi34">34
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+
+            </button>
+
+            <button id="combi35">35
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi36">36
+              <img src="dice_Images/dice-six-faces-three.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+      </div>
+
+      <div class="combi5">
+            <button id="combi45">45
+              <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi46">46
+              <img src="dice_Images/dice-six-faces-four.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+
+            <button id="combi56">56
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+              <img src="dice_Images/dice-six-faces-five.svg" alt="Button Image">
+            </button>
+      </div>
+
+      <p class="combi-payout">一赔五</p>
+    </div>
+
+    <div class="sum js-sum">
+      <div class="sum-first">
+        <button id="sum4">
+          4
+          <p class="sum-payout">一赔五十</p>
+        </button>
+        <button id="sum5">5
+          <p class="sum-payout">一赔十八</p>
+        </button>
+        <button id="sum6">6
+          <p class="sum-payout">一赔十四</p>
+        </button>
+        <button id="sum7">7
+          <p class="sum-payout">一赔十二</p>
+        </button>
+        <button id="sum8">8
+          <p class="sum-payout">一赔八</p>
+        </button>
+        <button id="sum9">9
+          <p class="sum-payout">一赔六</p>
+        </button>
+        <button id="sum10">10
+          <p class="sum-payout">一赔六</p>
+        </button>
+      </div>
+
+      <div class="sum-second">
+        <button id="sum11">11
+          <p class="sum-payout">一赔六</sp>
+        </button>
+        <button id="sum12">12
+          <p class="sum-payout">一赔六</p>
+        </button>
+        <button id="sum13">13
+          <p class="sum-payout">一赔八</p>
+        </button>
+        <button id="sum14">14
+          <p class="sum-payout">一赔十二</p>
+        </button>
+        <button id="sum15">15
+          <p class="sum-payout">一赔十四</p>
+        </button>
+        <button id="sum16">16
+          <p class="sum-payout">一赔十八</p>
+        </button>
+        <button id="sum17">17
+          <p class="sum-payout">一赔五十</p>
+        </button>
+      </div>
+    </div>
+
+    <p class="placeBet">Place Bet</p>
+    <div class="bet js-bet">
+    <button id="bet20">20</button>
+    <button id="bet50">50</button>
+    <button id="bet100">100</button>
+    <button id="bet200">200</button>
+    <button id="bet500">500</button>
+    <button id="bet1000">1000</button>
+    </div>
+
+    <p class="bankroll">Bankroll: </p>
+</div>
+    <script src="shaibao.js"></script>
+  </body>
+
+</html>
